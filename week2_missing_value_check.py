@@ -1,20 +1,15 @@
 # %%
-print("Hello VS Code!")
-
-# %%
 # Imports
 import pandas as pd
 import numpy as np
 from IPython.display import display
-
+from src.load_data import load_data
 
 # %% 
 # ===========================================================================================
 # 1. Data Loading
 # ===========================================================================================
-data_listing = pd.read_csv("../data/CRMLSListingMaster.csv", low_memory=False)
-data_sold = pd.read_csv("../data/CRMLSSoldMaster.csv", low_memory=False)
-
+data_listing, data_sold = load_data()
 
 
 # %% 
@@ -63,7 +58,7 @@ core_fields = [
     "BedroomsTotal", "BathroomsTotalInteger",
     "LivingArea", "LotSizeSquareFeet", "YearBuilt",
     "UnparsedAddress", "City", "StateOrProvince", "PostalCode", "CountyOrParish",
-    "Latitude", "Longitude"
+    "Latitude", "Longitude","LotSizeAcres", "DaysOnMarket"
 ]
 
 
